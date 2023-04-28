@@ -68,23 +68,19 @@ jobs:
           pushd feeds/luci
           wget -O- https://github.com/LGA1150/fullconenat-fw3-patch/raw/master/luci.patch | patch -p1
           popd
-          # rm -f ./.config*
-          # touch ./.config
-          #
+          rm -f ./.config*
+          touch ./.config
+          make defconfig
+          # menu
           # 在 cat >> .config <<EOF 到 EOF 之间粘贴你的编译配置, 需注意缩进关系
           # 例如:
-          cat >> .config <<EOF
-          CONFIG_TARGET_IMAGES_GZIP=y
-          CONFIG_KERNEL_BUILD_USER="OpenWrt-CI"
-          CONFIG_KERNEL_BUILD_DOMAIN="Azure"
-          EOF
           #
           # ===============================================================
           # 
-    
+          cat config1 > .config
       - name: Make download
         run: |
-          make download -j8 || make download -j1 V=s
+          make download -j8 V=s|| make download -j1 V=s
           rm -rf $(find ./dl/ -size -1024c)
           df -h
       - name: Deliver zip
