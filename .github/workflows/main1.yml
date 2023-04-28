@@ -87,7 +87,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: OpenWrt_firmware
-          path: ../op.tar.bz2
+          path: /home/runner/work/op.tar.bz2
 
       - name: Upload release asset
         if: github.event == 'release'
