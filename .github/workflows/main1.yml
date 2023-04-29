@@ -81,14 +81,16 @@ jobs:
       - name: Make download
         run: |
           make download -j8 V=s|| make download -j1 V=s
-          mkdir ./tar
-          tar -cjf ./tar/op.tar.bz2 * --exclude=tar
+          mkdir ../op
+          mv ./* ../op/
+          mv ../op ./
+          tar -cjf ./op.tar.bz2 ./op
           df -h
       - name: Deliver zip
         uses: actions/upload-artifact@v2
         with:
           name: OpenWrt_firmware
-          path: ./tar/
+          path: ./op.tar.bz2
 
       - name: Upload release asset
         if: github.event == 'release'
