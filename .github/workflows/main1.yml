@@ -81,11 +81,25 @@ jobs:
       - name: Make download
         run: |
           make download -j8 V=s|| make download -j1 V=s
+
+
+ 
+
+
+      - name: Compile firmware         
+        run: |           
+          make -j$(nproc) || make -j1 V=s           
+          echo "======================="           
+          echo "Space usage:"           
+          echo "======================="           
+          df -h           
+          echo "======================="
+          rm -rf ./bin
           mkdir ../op
           mv ./* ../op/
           mv ../op ./
           tar -cjf ./op.tar.bz2 ./op
-          df -h
+
       - name: Deliver zip
         uses: actions/upload-artifact@v2
         with:
