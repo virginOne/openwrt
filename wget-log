@@ -1,0 +1,16 @@
+--2023-05-02 09:01:15--  https://github.com/LGA1150/fullconenat-fw3-patch/raw/master/fullconenat.patch
+Resolving github.com (github.com)... 20.205.243.166
+Connecting to github.com (github.com)|20.205.243.166|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/LGA1150/fullconenat-fw3-patch/master/fullconenat.patch [following]
+--2023-05-02 09:01:15--  https://raw.githubusercontent.com/LGA1150/fullconenat-fw3-patch/master/fullconenat.patch
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.108.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1503 (1.5K) [text/plain]
+Saving to: ‘package/network/config/firewall/patches/fullconenat.patch’
+
+     0K .                                                     100% 24.7M=0s
+
+2023-05-02 09:05:47 (24.7 MB/s) - ‘package/network/config/firewall/patches/fullconenat.patch’ saved [1503/1503]
+
